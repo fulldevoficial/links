@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   appTitle = environment.appTitle;
   isProduction = environment.production;
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
     const _audio: any = new Audio;
     _audio.src = 'jinglebell.mp3';
     _audio.loop = true;
