@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 
 import { RouterModule } from '@angular/router';
 import { environment } from '../../../environments/environment';
@@ -22,12 +22,12 @@ import { _fixeGroups } from '../grupos/group.model';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements AfterViewInit {
   showModal: boolean = false;
   appTitle = environment.appTitle;
   isProduction = environment.production;
 
-  ngOnInit(): void { 
+  ngAfterViewInit() {
     const _audio: any = new Audio;
     _audio.src = 'jinglebell.mp3';
     _audio.loop = true;
