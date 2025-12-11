@@ -30,8 +30,9 @@ export class HomeComponent {
 hasInteracted = false;
 
 onUserInteraction() {
-  this.hasInteracted = true;
+  if (this.hasInteracted == true) return;
 
+  this.hasInteracted = true;
   const audio = new Audio('jinglebell.mp3');
   audio.loop = true;
   audio.play();
