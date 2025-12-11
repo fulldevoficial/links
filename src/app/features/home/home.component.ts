@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { RouterModule } from '@angular/router';
 import { environment } from '../../../environments/environment';
@@ -22,19 +22,21 @@ import { _fixeGroups } from '../grupos/group.model';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent {
   showModal: boolean = false;
   appTitle = environment.appTitle;
   isProduction = environment.production;
 
-  ngAfterViewInit() {
-    const _audio: any = new Audio;
-    _audio.src = 'jinglebell.mp3';
-    _audio.loop = true;
-    _audio.autoplay = true;
-    _audio.play();
-    _audio.load();
-  }
+hasInteracted = false;
+
+onUserInteraction() {
+  this.hasInteracted = true;
+
+  const audio = new Audio('jinglebell.mp3');
+  audio.loop = true;
+  audio.play();
+}
+
 
   constructor() {
     if (environment.production) {
