@@ -56,10 +56,10 @@ export const _fixeGroups = signal<fixedGroupsInterface[]>([
         text: 'Only English',
         linkGroup: 'HcDc5HtAHzr0q4a7vPBJfS'
     },
-    {
-        src: 'fd-default.jpg', //Icone
-        shoIcon: true,
-        text: 'Strong',
-        linkGroup: 'IWEV2ThDLrxK0crZXrAT4X'
-    },
+///    {
+///       src: 'fd-default.jpg', //Icone
+///        shoIcon: true,
+///        text: 'Strong',
+///        linkGroup: 'IWEV2ThDLrxK0crZXrAT4X'
+///    },
 ])
