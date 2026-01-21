@@ -41,9 +41,9 @@ onUserInteraction() {
 
   constructor() {
     if (environment.production) {
-      console.warn('🏠 Home component em produção');
+      console.warn('🏠 Home component em produção ');
     } else {
-      console.warn('🏠 Home component em desenvolvimento');
+      console.warn('🏠 Home component em desenvolvimento ');
     }
   }
 
