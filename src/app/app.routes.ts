@@ -30,6 +30,13 @@ export const routes: Routes = [
       import('./features/grupos/grupos.component').then((m) => m.GruposComponent),
   },
   {
+    path: 'politica-de-privacidade',
+    loadComponent: () =>
+      import('./features/politica-de-privacidade/politica-de-privacidade.component').then(
+        (m) => m.PoliticaDePrivacidadeComponent,
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'home',
   },
