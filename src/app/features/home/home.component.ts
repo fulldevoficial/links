@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 import { RouterModule } from '@angular/router';
 import { environment } from '../../../environments/environment';
@@ -22,9 +23,17 @@ import { GruposComponent } from '../grupos/grupos.component';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
+  private readonly sanitizer = inject(DomSanitizer);
+
   showModal: boolean = false;
   appTitle = environment.appTitle;
   isProduction = environment.production;
+  readonly newsletterProfileUrl = 'https://substack.com/@fulldev';
+  readonly newsletterSubscribeUrl =
+    'https://substack.com/@fulldev?utm_campaign=profile&utm_medium=profile-page';
+  readonly newsletterEmbedUrl: SafeResourceUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+    'https://fulldev.substack.com/embed',
+  );
 
   constructor() {
     if (environment.production) {

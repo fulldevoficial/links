@@ -72,6 +72,39 @@
             </li>
         </ul>
 
+        <section class="newsletter" aria-labelledby="newsletter-title">
+            <div class="newsletter__header">
+                <p class="newsletter__eyebrow">Newsletter diária</p>
+                <h2 class="newsletter__title" id="newsletter-title">Receba a FullDev no seu e-mail</h2>
+<!--                 <p class="newsletter__description">
+                    O campo abaixo é o formulário incorporado do próprio Substack para a assinatura da newsletter.
+                </p> -->
+            </div>
+
+            <div class="newsletter__embed">
+                <iframe
+                    [src]="newsletterEmbedUrl"
+                    title="Assinar newsletter da FullDev no Substack"
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <p class="newsletter__fallback">
+                Se o formulário não carregar, finalize a assinatura direto no
+                <a [href]="newsletterSubscribeUrl" target="_blank" rel="noopener noreferrer">Substack</a>.
+            </p>
+
+<!--             <app-custom-button-component 
+            class="newsletter__button"
+            [href]="newsletterProfileUrl"
+            target="_blank"
+            text="Abrir perfil da FullDev no Substack"
+            [showIcon]="true"
+            color="link"
+            sizes="large">
+            </app-custom-button-component> -->
+        </section>
+        
         <app-social-component></app-social-component>
         <app-footer-component></app-footer-component>
 
